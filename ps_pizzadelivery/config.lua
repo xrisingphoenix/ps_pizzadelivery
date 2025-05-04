@@ -12,6 +12,11 @@ Config.Notify = function(msg)
     ESX.ShowNotification(msg)
 end
 
+Config.Job = {
+    enable = true,
+    job = 'mechanic'
+}
+
 Config.OneTimeStore = true -- If you need to store every single Pizza to your vehicle or only 1 time to start driving
 
 Config.TipAmount = {
@@ -147,6 +152,7 @@ Translation = {
         ['tip'] = 'Du hast Trinkgeld in Höhe von %s$ erhalten',
         ['reward'] = 'Du hast deinen Lohn in Höhe von %s$ erhalten',
         ['webhook_done_job'] = '**%s** hat den Pizzajob erledigt und **%s$** erhalten',
+        ['dont_have_job'] = 'Du hast nicht den richtigen Job dafür',
     },
     ['en'] = {
         ['start_blip'] = 'Pizza Job',
@@ -175,6 +181,7 @@ Translation = {
         ['tip'] = 'You received a tip: %s$',
         ['reward'] = 'You received your payment of %s$',
         ['webhook_done_job'] = '**%s** completed the pizza job and received **%s$**',
+        ['dont_have_job'] = 'You dont have the required Job!',
     }
     
 }
