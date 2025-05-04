@@ -14,6 +14,15 @@ AddEventHandler("ps_pizza:getreward", function(reward)
     webhook_pizza(text)
 end)
 
+ESX.RegisterServerCallback('ps_pizza:checkJob', function(source, cb)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    if xPlayer.job.name == Config.Job.job then
+        cb(true)
+    else
+        cb(false)
+    end
+end)
+
 function webhook_pizza(text)
     local xPlayer = ESX.GetPlayerFromId(source)
     local webhook = Config.Webhook
