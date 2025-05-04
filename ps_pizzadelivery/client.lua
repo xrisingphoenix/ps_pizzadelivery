@@ -65,7 +65,17 @@ Citizen.CreateThread(function()
             if dist < 1.5 then 
                 DrawText3D(v.coords.x, v.coords.y, v.coords.z, "~y~[E] "..Translation[Config.Locale]['start_blip'])
                 if IsControlJustReleased(0, 38) then
-                    OpenPizzaMenu(v)
+                    if Config.Job.enable then 
+                        ESX.TriggerServerCallback('ps_pizza:checkJob', function(hasJob)
+                            if hasJob then
+                                OpenPizzaMenu(v)
+                            else
+                                Config.Notify(Translation[Config.Locale]['dont_have_job'])
+                            end
+                        end)
+                    else 
+                        OpenPizzaMenu(v)
+                    end
                 end
             end
         end
