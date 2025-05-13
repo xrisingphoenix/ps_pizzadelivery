@@ -13,7 +13,7 @@ Config.Notify = function(msg)
 end
 
 Config.Job = {
-    enable = true,
+    enable = false,
     job = 'mechanic'
 }
 
